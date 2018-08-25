@@ -1,0 +1,19 @@
+{
+  "name": "tripdocket-api",
+  "version": "1.0.0",
+  "description": "API for trip timrline",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiteshTikmani/tripdocket-api.git"
+  },
+  "author": "Hitesh Tikmani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiteshTikmani/tripdocket-api/issues"
+  },
+  "homepage": "https://github.com/hiteshTikmani/tripdocket-api#readme"
+}
