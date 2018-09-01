@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-10">
             <Map className="map-box" center={position} zoom={this.state.zoom}>
               <TileLayer
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -72,8 +72,7 @@ class App extends Component {
 
             </Map>
           </div>
-          <div className="col-md-4">
-            <h4>Hello World!</h4>
+          <div className="col-md-2">
             <Details />
           </div>
         </div>
