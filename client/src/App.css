@@ -7,9 +7,7 @@
 }
 
 .card{
-  width: 90%;
-  height: 80%;
-  margin: 5%;
+  margin: 3%;
   border: 5px #b2b0b0 solid;
   border-radius: 15px;
 }
