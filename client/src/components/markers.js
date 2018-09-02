@@ -6,7 +6,7 @@ import Details from './details';
 const Markers = (props) => {
   return (
     <div>
-      <Marker position={props.pos} icon={myIcon} onclick = {() => props.onSelectedMarker(props.pos)}>
+      <Marker position={props.pos} icon={myIcon} onclick={() => props.onSelectedMarker(props.pos)}>
       </Marker>
     </div>
   )

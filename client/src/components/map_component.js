@@ -6,12 +6,10 @@ import Details from './details';
 
 export default class Map_Component extends Component {
   state = {
-    location: [[
-      12.971599,
-      77.594566
-    ]],
+    location: [[12.971599, 77.594566]],
     zoom: 5,
-    selectedMarker : []
+    position: [22.572645, 88.363892],
+    selectedMarker: []
   }
 
   componentDidMount() {
@@ -22,7 +20,7 @@ export default class Map_Component extends Component {
         var positionTest = response.data[placesKeyArr[i]].placePosition;
         locations.push(positionTest);
       }
-      this.setState({ 
+      this.setState({
         location: locations
       });
     });
@@ -31,20 +29,25 @@ export default class Map_Component extends Component {
 
 
   render() {
-    const position = [this.state.location[0][0], this.state.location[0][1]];
-    const MarkersData = this.state.location.map((elem)=>{
+    const MarkersData = this.state.location.map((elem) => {
       return (
-      <Markers 
-      onSelectedMarker = {singleMarker => this.setState({selectedMarker: singleMarker})}
-      pos = {elem}
-      />)
+        <Markers
+          onSelectedMarker={
+            singleMarker => this.setState(
+              {
+                selectedMarker: singleMarker,
+                zoom: 10,
+                position: singleMarker
+              })}
+          pos={elem}
+        />)
     })
 
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-8">
-            <Map className="map-box" center={position} zoom={this.state.zoom}>
+            <Map className="map-box" center={this.state.position} zoom={this.state.zoom}>
               <TileLayer
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -55,7 +58,7 @@ export default class Map_Component extends Component {
             </Map>
           </div>
           <div className="col-md-4">
-            <Details selectedMarker={this.state.selectedMarker}/>
+            <Details selectedMarker={this.state.selectedMarker} />
           </div>
         </div>
       </div>

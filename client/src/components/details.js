@@ -14,7 +14,7 @@ export default class Details extends Component {
       var data = response.data;
       var datakeys = Object.keys(response.data);
       for (var i = 1; i < datakeys.length; i++) {
-        if (this.props.selectedMarker[0] == data[datakeys[i]].placePosition[0] && this.props.selectedMarker[1] == data[datakeys[i]].placePosition[1]) {
+        if ((this.props.selectedMarker[0] == data[datakeys[i]].placePosition[0]) && (this.props.selectedMarker[1] == data[datakeys[i]].placePosition[1])) {
           this.setState({
             place: datakeys[i],
             img: data[datakeys[i]].imageURL,
@@ -27,7 +27,7 @@ export default class Details extends Component {
   render() {
     return (
       <div>
-        <div className="card" style={{ width: "30rem" }}>
+        <div className="card" style={{ width: "25rem" }}>
           <img className="card-img-top" src={this.state.img} />
           <div className="card-body">
             <h5 className="card-title">{this.state.place}</h5>
