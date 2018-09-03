@@ -26,7 +26,7 @@ mongoose.connect(keys.mongoURI,(err,db)=>{
     })
 });
 
-if(process.env.NODE_ENv === 'production'){
+if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/buid'));
 
     const path = require('path');
