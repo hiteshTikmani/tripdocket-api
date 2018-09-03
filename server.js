@@ -19,7 +19,7 @@ router.get('/',(req,res) => {
 mongoose.connect(keys.mongoURI,(err,db)=>{
     if(err){console.log('ERROR AA GYA BHAI')};
     db.collection('places-test').findOne({},(err,result)=>{
-        if(err){console.log('Coolection mein ERROR AA GYA BHAI')}
+        if(err){console.log('DB Connection error')}
         router.get('/db',(req,res) => {
             res.send(result);
         });
@@ -27,7 +27,7 @@ mongoose.connect(keys.mongoURI,(err,db)=>{
 });
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/buid'));
+    app.use('/',express.static('client/buid'));
 
     const path = require('path');
     app.get('*',(req,res)=>{
