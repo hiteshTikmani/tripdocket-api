@@ -4,7 +4,7 @@
   "private": true,
   "proxy": {
     "/db": {
-      "target": "http://localhost:8000/api"
+      "target": "http://localhost:8000"
     }
   },
   "dependencies": {

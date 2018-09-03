@@ -10,14 +10,10 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-app.use('/api',router);
-
-router.get('/',(req,res) => {
-    res.send({"hitesh":"tikmani"});
-}); 
+app.use('/',router);
 
 mongoose.connect(keys.mongoURI,(err,db)=>{
-    if(err){console.log('ERROR AA GYA BHAI')};
+    if(err){console.log(err)};
     db.collection('places-test').findOne({},(err,result)=>{
         if(err){console.log('DB Connection error')}
         router.get('/db',(req,res) => {
