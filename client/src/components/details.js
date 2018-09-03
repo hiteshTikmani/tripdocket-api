@@ -14,7 +14,7 @@ export default class Details extends Component {
       var data = response.data;
       var datakeys = Object.keys(response.data);
       for (var i = 1; i < datakeys.length; i++) {
-        if ((this.props.selectedMarker[0] == data[datakeys[i]].placePosition[0]) && (this.props.selectedMarker[1] == data[datakeys[i]].placePosition[1])) {
+        if ((this.props.selectedMarker[0] === data[datakeys[i]].placePosition[0]) && (this.props.selectedMarker[1] === data[datakeys[i]].placePosition[1])) {
           this.setState({
             place: datakeys[i],
             img: data[datakeys[i]].imageURL,

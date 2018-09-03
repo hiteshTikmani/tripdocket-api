@@ -4,7 +4,7 @@ import axios from 'axios';
 import Markers from './markers';
 import Details from './details';
 
-export default class Map_Component extends Component {
+export default class MapComponent extends Component {
   state = {
     location: [[12.971599, 77.594566]],
     zoom: 5,
@@ -31,7 +31,7 @@ export default class Map_Component extends Component {
   render() {
     const MarkersData = this.state.location.map((elem) => {
       return (
-        <Markers
+        <Markers key= {Math.random()}
           onSelectedMarker={
             singleMarker => this.setState(
               {

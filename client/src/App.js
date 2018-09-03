@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Map_Component from './components/map_component';
+import MapComponent from './components/mapComponent';
 
 export default class App extends Component {
   render() {
     return (
-      <Map_Component />
+      <div>
+      <MapComponent />
+      </div>
     )
   }
 }
